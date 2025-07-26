@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Curso de CSS - Aprenda desenvolvimento web com DIO" />
+    <title>Desafío CSS DIO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+        rel="stylesheet"
+    />
+    <style>
+        :root {
+            --primary-color: #9c27b0;
+            --background-dark: #1a1a1a;
+            --background-darker: #0f0f0f;
+            --text-light: #ffffff;
+            --text-muted: #cccccc;
+            --border-color: #333;
+        }
+
+        /* --- Estilos Generales --- */
+        body {
+            background-color: #000000;
+            color: var(--text-light);
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.1em;
+            color: var(--text-muted);
+            margin-top: 0;
+            margin-bottom: 1em;
+        }
+
+        /* --- Encabezado --- */
+        header {
+            background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.7),
+                    rgba(0, 0, 0, 0.9)
+                ),
+                url('https://via.placeholder.com/1200x600/1a1a1a/000000?text=Code+Background');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header .logo {
+            background-color: rgba(156, 39, 176, 0.2);
+            border: 2px solid var(--primary-color);
+            padding: 10px 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        header .logo h1 {
+            margin: 0;
+            font-size: 1.5em;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+        }
+
+        header h2 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+
+        header p {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .cta-button {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--text-light);
+            padding: 15px 35px;
+            font-size: 1.2em;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 4px;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: var(--primary-color);
+            color: #000000;
+            outline: none;
+        }
+
+        .cta-button:focus-visible {
+            outline: 3px solid var(--primary-color);
+            outline-offset: 3px;
+        }
+
+        /* --- Sección: ¿Qué voy a aprender? --- */
+        .aprender-section h2 {
+            margin-bottom: 50px;
+            font-size: 2.5em;
+            text-transform: uppercase;
+        }
+
+        .aprender-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .aprender-item {
+            background-color: var(--background-dark);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            box-sizing: border-box;
+            transition: transform 0.3s;
+        }
+
+        .aprender-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(156, 39, 176, 0.3);
+        }
+
+        .aprender-item img {
+            width: 160px;
+            height: 45px;
+            object-fit: contain;
+            border-radius: 50px;
+            margin-bottom: 15px;
+            border: 3px solid var(--primary-color);
+            background-color: #000;
+        }
+
+        .aprender-item h3 {
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        /* --- Sección: Transforma el mundo --- */
+        .transforma-section {
+            background-image: linear-gradient(
+                    rgba(156, 39, 176, 0.5),
+                    rgba(0, 0, 0, 0.8)
+                ),
+                url('https://via.placeholder.com/1200x500/000000/ffffff?text=Tech+Person');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .transforma-section h2 {
+            font-size: 3em;
+            color: var(--text-light);
+            text-shadow: 2px 2px 4px #000;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        /* --- Sección: Evoluciona --- */
+        .evoluciona-section {
+            background-color: var(--background-darker);
+        }
+
+        .evoluciona-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .evoluciona-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .evoluciona-text h2 {
+            font-size: 2.5em;
+            text-transform: uppercase;
+            margin-top: 0;
+        }
+
+        .evoluciona-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .evoluciona-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px var(--primary-color);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* --- Responsividad --- */
+        @media (max-width: 600px) {
+            .evoluciona-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .evoluciona-text,
+            .evoluciona-image {
+                min-width: 100%;
+            }
+
+            header h2 {
+                font-size: 2em;
+            }
+
+            .transforma-section h2 {
+                font-size: 2em;
+            }
+
+            .aprender-item {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado Principal -->
+    <header>
+        <div class="logo">
+            <h1>CSS DEVELOPER</h1>
+        </div>
+        <h2>TRILHA CSS DA DIO</h2>
+        <p>
+            A nova Trilha de CSS da DIO está disponível. Aprenda do zero como
+            desenvolver sites profissionais e atrativos.
+        </p>
+        <button class="cta-button" type="button">Quero me inscrever</button>
+    </header>
+
+    <main>
+        <!-- Sección: ¿Qué voy a aprender? -->
+        <section class="aprender-section container">
+            <h2>O QUE VOU APRENDER?</h2>
+            
+            <!-- ¡AQUÍ ESTÁ LA CORRECCIÓN FINAL! -->
+            <div class="aprender-grid">
+                <div class="aprender-item">
+                    <img src="images/icono1-css.png" alt="Icono de CSS3" />
+                    <h3>Módulo 1: Primeiros passos com CSS</h3>
+                    <p>Conceitos básicos, seletores e como aplicar estilos.</p>
+                </div>
+                <div class="aprender-item">
+                    <img src="images/icono2-css.png" alt="Icono de Flexbox" />
+                    <h3>Módulo 2: Posicionamento com CSS</h3>
+                    <p>Dominando Flexbox, Grid e outras técnicas de layout.</p>
+                </div>
+                <div class="aprender-item">
+                    <img src="images/icono3-css.png" alt="Icono de Animaciones" />
+                    <h3>Módulo 3: Estilos e efeitos avançados</h3>
+                    <p>Animações, transições e design responsivo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Transforma el mundo -->
+        <section class="transforma-section">
+            <div class="container">
+                <h2>TRANSFORME O MUNDO COM A GENTE</h2>
+            </div>
+        </section>
+
+        <!-- Sección: Evoluciona y encara desafíos -->
+        <section class="evoluciona-section container">
+            <div class="evoluciona-content">
+                <div class="evoluciona-text">
+                    <h2>EVOLUA E ENCARE NOVOS DESAFIOS PROFISSIONAIS</h2>
+                    <p>
+                        Junte-se à nossa comunidade e continue crescendo. Projetos
+                        práticos, mentoria e uma rede de contatos incrível esperam por
+                        você.
+                    </p>
+                </div>
+                <div class="evoluciona-image">
+                    <img
+                        src="https://via.placeholder.com/500x350/1a1a1a/9c27b0?text=Developer+at+Work"
+                        alt="Desarrollador trabajando en un proyecto"
+                    />
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
